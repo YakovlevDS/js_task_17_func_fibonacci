@@ -7,14 +7,12 @@
 const fibonacci = num => {
   const result = [0, 1];
 
-  for (let i = 2; i <= num; i++) {
-    const prevNum1 = result[i - 1];
-    const prevNum2 = result[i - 2];
-    result.push(prevNum1 + prevNum2);
+  for (let i = 2; i <= num; i++) {//проходим по массиву с 3 элемента который еще не известен
+   result.push(result[i - 1] + result[i - 2]);//добавляем i элемент в массив , который равен сумме двух предыдущих
   }
-  return result[num];
+  return result[num];//возвращаем последний элемент массива равный передаваемому в функцию числу num.
 };
-
+ console.log(fibonacci(30)); //832040
 console.log(fibonacci(10)); // 55
 console.log(fibonacci(20)); // 6765
 
